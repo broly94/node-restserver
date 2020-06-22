@@ -8,8 +8,8 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 
-
-app.use(require('./routes/usuario'));
+//Configuraciòn global de rutas
+app.use(require('./routes/index'));
 
 mongoose.connect(process.env.URLDB, {
     useNewUrlParser: true,

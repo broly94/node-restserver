@@ -53,6 +53,6 @@ usuarioSchema.methods.toJSON= function () {
 }
 
 // Crea la validación y retorna un error en caso de que un campo requerido falte
-usuarioSchema.plugin(uniqueValidator, {message: '{PATH} es requerido'});
+usuarioSchema.plugin(uniqueValidator, {message: '{PATH} debe de ser único'});
 
 module.exports = mongoose.model('Usuario', usuarioSchema);

@@ -4,7 +4,9 @@ const _ = require('underscore');
 const app = express();
 const Usuario = require('../models.js/usuario');
 
-app.get("/usuario", (req, res) => {
+const { verificarToken, verificaAdministrador } = require("../middlewares/autenticacion");
+
+app.get("/usuario", verificarToken, (req, res) => {
 
   let desde = req.query.desde || 0
   desde = Number(desde);
@@ -38,41 +40,17 @@ app.get("/usuario", (req, res) => {
 
 });
 
-app.post("/usuario", (req, res) => {
-
+app.post("/usuario", [verificarToken, verificaAdministrador], (req, res) => {
   let { nombre, email, password, role } = req.body;
 
   let usuario = new Usuario({
-      nombre,
-      email,
-      password: bcrypt.hashSync(password, 10),
-      role
-  })
+    nombre,
+    email,
+    password: bcrypt.hashSync(password, 10),
+    role,
+  });
 
-  usuario.save( (err, usuarioDB) => {
-    
-    if(err) {
-        return res.status(400).json({
-           ok: false,
-           err
-         });
-    }
-
-    res.json({
-        ok: true,
-        usuario: usuarioDB
-    })
-
-  })
-});
-
-app.put("/usuario/:id", (req, res) => {
-
-  let id = req.params.id;
-
-  const body = _.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado'])
-
-  Usuario.findByIdAndUpdate(id, body, {new: true, runValidators: true}, (err, usuarioDB) => {
+  usuario.save((err, usuarioDB) => {
     if (err) {
       return res.status(400).json({
         ok: false,
@@ -82,11 +60,64 @@ app.put("/usuario/:id", (req, res) => {
 
     res.json({
       ok: true,
-      usuario: usuarioDB
-    })
-
-  })
+      usuario: usuarioDB,
+    });
+  });
 });
+
+app.put("/usuario/:id", [verificarToken, verificaAdministrador], (req, res) => {
+  let id = req.params.id;
+
+  const body = _.pick(req.body, ["nombre", "email", "img", "role", "estado"]);
+
+  Usuario.findByIdAndUpdate(
+    id,
+    body,
+    { new: true, runValidators: true },
+    (err, usuarioDB) => {
+      if (err) {
+        return res.status(400).json({
+          ok: false,
+          err,
+        });
+      }
+
+      res.json({
+        ok: true,
+        usuario: usuarioDB,
+      });
+    }
+  );
+});
+
+// Deshabilitar usuario
+
+app.delete('/usuario/:id', [verificarToken, verificaAdministrador], (req, res) => {
+
+  const id = req.params.id;
+
+  const cambiaEstado = {
+    estado: false
+  }
+
+  Usuario.findByIdAndUpdate(id, cambiaEstado, {new: true}, (err, usuario) => {
+
+    if (err) {
+      res.status(400).json({
+        ok: false,
+        err
+      });
+    }
+
+    if(usuario.estado == false) {
+      res.json({
+        ok: true,
+        message: 'Usuario Deshabilitado',
+        usuario,
+      });
+    }
+  })
+})
 
 // Elimina usuario 
 
@@ -119,38 +150,6 @@ app.put("/usuario/:id", (req, res) => {
 
 //   })
 // });
-
-// Deshabilitar usuario
-
-app.delete('/usuario/:id', (req, res) => {
-
-  const id = req.params.id;
-
-  const cambiaEstado = {
-    estado: false
-  }
-
-  Usuario.findByIdAndUpdate(id, cambiaEstado, {new: true}, (err, usuario) => {
-
-    if (err) {
-      res.status(400).json({
-        ok: false,
-        err
-      });
-    }
-
-    if(usuario.estado == false) {
-      res.json({
-        ok: true,
-        message: 'Usuario Deshabilitado',
-        usuario,
-      });
-    }
-
-    
-  })
-
-})
 
 
 module.exports =  app;
