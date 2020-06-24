@@ -3,10 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT;
+const path = require('path');
 
 //Settings
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
+app.use(express.static( path.resolve(__dirname, 'public')));
 
 //Configuraciòn global de rutas
 app.use(require('./routes/index'));

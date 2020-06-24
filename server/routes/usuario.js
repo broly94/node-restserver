@@ -2,7 +2,8 @@ const express = require("express");
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const app = express();
-const Usuario = require('../models.js/usuario');
+const Usuario = require('../models/usuario');
+const nodemailer = require('nodemailer');
 
 const { verificarToken, verificaAdministrador } = require("../middlewares/autenticacion");
 
@@ -61,6 +62,7 @@ app.post("/usuario", [verificarToken, verificaAdministrador], (req, res) => {
     res.json({
       ok: true,
       usuario: usuarioDB,
+      email
     });
   });
 });
@@ -118,6 +120,47 @@ app.delete('/usuario/:id', [verificarToken, verificaAdministrador], (req, res) =
     }
   })
 })
+
+//Send Email
+/*app.post('/send-email', async (req, res) => {
+
+  const {nombre, email, mensaje} = req.body;
+
+  contentHTML = `
+    <h1>Informacion del usuario</h1>
+     <ul>
+      <li>Nombre de usuario: ${nombre}</li>
+      <li>Email del usuario: ${email}</li>
+     </ul>
+     <p>${mensaje}</p>
+  `;
+
+  console.log(contentHTML);
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: 2525,
+    auth: {
+      user: "d9d83ba845c054",
+      pass: "faa7724cca5814"
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  });
+
+  const info = await transporter.sendMail({
+    from: "'Server Test' <test@test.com>",
+    to: "joaquin_leonel_carro@hotmail.com",
+    subject: "Formulario de contacto",
+    text: "Hello Word",
+  });
+
+  console.log("Mensaje enviado", info.messageId);
+
+  console.log("recivido")
+
+})*/
 
 // Elimina usuario 
 
