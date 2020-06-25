@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const app = express();
 const Usuario = require('../models/usuario');
-const nodemailer = require('nodemailer');
 
 const { verificarToken, verificaAdministrador } = require("../middlewares/autenticacion");
 

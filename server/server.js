@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT;
 const path = require('path');
+const morgan = require('morgan');
 
 //Settings
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(express.static( path.resolve(__dirname, 'public')));
+app.use(morgan('dev'));
 
 //Configuraciòn global de rutas
 app.use(require('./routes/index'));
