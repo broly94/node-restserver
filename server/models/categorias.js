@@ -14,12 +14,11 @@ const categoriaSchema = new Schema({
   },
   estado: {
     type: Boolean,
-    required: [true, "El estado es requerido"],
-    default: true,
-  },
-  usuario: { type: Schema.Types.ObjectId, ref: "Usuario" }
+    default: true
+  }
 });
 
+//Validación de las propiedades unicas
 categoriaSchema.plugin(uniqueValidator, {message: '{PATH} debe ser unico'});
 
 module.exports = mongoose.model('Categorias', categoriaSchema);
