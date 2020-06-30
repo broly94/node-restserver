@@ -13,7 +13,7 @@ categoriasCtrl.getCategorias = async (req, res) => {
   try {
     const categorias = await Categorias.find({estado: true});
     const totalCategorias = await Categorias.countDocuments({estado: true})
-    if (totalCategorias.length === 0) {
+    if (totalCategorias === 0) {
       respuestaError(res, 400, "No hay categorias registradas");
     }
     return res.json({
