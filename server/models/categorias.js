@@ -8,7 +8,6 @@ const Schema = mongoose.Schema;
 const categoriaSchema = new Schema({
   nombre: {
     type: String,
-    unique: true,
     required: [true, "La categoría es requerida"],
     trim: true,
   },

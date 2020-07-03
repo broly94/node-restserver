@@ -81,6 +81,7 @@ productoCtrl.putProducto = async (req, res) => {
       "descripcion",
       "categoria",
     ]);
+    console.log(body)
     const producto = await Producto.findByIdAndUpdate(id, body, {
       new: true,
       runValidators: true,
@@ -115,5 +116,23 @@ productoCtrl.deleteProducto = async (req, res) => {
     respuestaErrorServer(res, error, 400, "Error en el servidor");
   }
 };
+
+// BUSCAR PRODUCTO
+productoCtrl.getProducto_query = async (req, res) => {
+  try {
+    const query = req.params.query;
+    const regex = new RegExp(query, 'i');
+    const producto = await Producto.find({ nombre: regex }).populate('categoria');
+    if (!producto) {
+      respuestaError(res, 400, "El producto no existe");
+    }
+    return res.json({
+      ok: true,
+      producto,
+    });
+  } catch (error) {
+    respuestaErrorServer(res, error, 400, "Error en el servidor");
+  }
+}
 
 module.exports = productoCtrl;

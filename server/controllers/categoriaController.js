@@ -8,6 +8,7 @@ const {
   respuestaError,
   respuestaErrorServer,
 } = require("../helpers/respuestas");
+const _ = require('underscore');
 
 categoriasCtrl.getCategorias = async (req, res) => {
   try {
@@ -46,12 +47,9 @@ categoriasCtrl.postCategoria = async (req, res) => {
 categoriasCtrl.putCategoria = async (req, res) => {
   try {
     const id = req.params.id;
-    const { nombre, estado } = req.body;
-    const categoria = await Categorias.findByIdAndUpdate(
-      id,
-      { nombre, estado },
-      { new: true }
-    );
+    const body = _.pick(req.body, ["nombre", "estado"])
+    const categoria = await Categorias.findByIdAndUpdate( id, body,{ new: true, runValidators: true });
+    console.log(categoria)
     if (!categoria) {
       respuestaError(res, 400, "Error al actualizar categoria");
     }
