@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Resume - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <!-- <span class="d-block d-lg-none">Clarence Taylor</span> -->
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="assets/img/profile.jpg" alt="" /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre mi</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Cursos</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Proyectos</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+        <!-- About-->
+        <section class="resume-section" id="about">
+            <div class="resume-section-content">
+                <h1 class="mb-0">
+                    Leonel
+                    <span class="text-primary">Carro</span>
+                </h1>
+                <div class="subheading mb-5">
+                    Buenos Aires, Florencio Varela - (+54) 1136713336 ·
+                    <a href="joaquin_leonel_carro@hotmail.com">joaquin_leonel_carro@hotmail.com</a>
+                </div>
+                <p class="lead mb-2">Me describo como una persona comprometida, que le motivan los desafíos constantes
+                    ya que en ellos encuentro diferentes
+                    formas de adquirir conocimientos.</p>
+                <p class="lead mb-5">Me especializo en el desarrollo web FullStack Javascript, preferentemente en el
+                    lado del servidor con Node.JS y
+                    Express.JS</p>
+                <div class="social-icons">
+                    <a class="social-icon" href="https://www.linkedin.com/in/leonel-carro-354667162/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a class="social-icon" href="https://github.com/broly94" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a class="social-icon" href="https://www.facebook.com/leonel.carro" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Education-->
+        <section class="resume-section" id="education">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Formación Tecnológica</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">IAC Quilmes</h3>
+                        <div class="subheading mb-3">Técnico</div>
+                        <div>Reparación y armado de PC</div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Finalizado - 2010</span></div>
+                </div>
+                <hr>
+                <!--Curso dw completo-->
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Udemy</h3>
+                        <div class="subheading mb-3">Programación y Diseño Web</div>
+                        <div>Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL</div>
+                        <div id="qrcodeDWCompleto" style="width:100px; height:100px; margin-top:15px;"></div>
+                        <br>
+                        <br>
+                        <p>QR del curso</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary"> Finalizado - 2018</span></div>
+                </div>
+                <hr>
+                <!--Curso Bootstrap-->
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Udemy</h3>
+                        <div class="subheading mb-3">Diseño Web</div>
+                        <div>Diseño y Desarrollo Web con Bootstrap 4</div>
+                        <div id="qrcodeBootstrap" style="width:100px; height:100px; margin-top:15px;"></div>
+                        <br>
+                        <br>
+                        <p>QR del curso</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary"> Finalizado - 2018</span></div>
+                </div>
+                <hr>
+                <!--Curso Javascript-->
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Udemy</h3>
+                        <div class="subheading mb-3">Programación Web</div>
+                        <div>JavaScript Moderno Guía Definitiva.</div>
+                        <div id="qrcodeJavascript" style="width:100px; height:100px; margin-top:15px;"></div>
+                        <br>
+                        <br>
+                        <p>QR del curso</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary"> Finalizado - 2019</span></div>
+                </div>
+                <hr>
+                <!--Curso React-->
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Udemy</h3>
+                        <div class="subheading mb-3">Programación Web</div>
+                        <div>React - La Guía Completa: Hooks Context Redux MERN.</div>
+                        <div id="qrcodeReact" style="width:100px; height:100px; margin-top:15px;"></div>
+                        <br>
+                        <br>
+                        <p>QR del curso</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary"> Finalizado - 2019</span></div>
+                </div>
+                <hr>
+                <!--Curso Node-->
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Udemy</h3>
+                        <div class="subheading mb-3">Programación Web</div>
+                        <div>Node: De cero a experto.</div>
+                        <div id="qrcodeNode" style="width:100px; height:100px; margin-top:15px;"></div>
+                        <br>
+                        <br>
+                        <p>QR del curso</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary"> Finalizado - 2020</span></div>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Skills-->
+        <section class="resume-section" id="skills">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Skills</h2>
+                <div class="subheading mb-3">Lenguajes de Programación, Frameworks y Herramientas</div>
+                <ul class="list-inline dev-icons">
+                    <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-bootstrap"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-php"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-react"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
+                    <li class="list-inline-item"><i class="fas fa-database"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+                </ul>
+                <ul class="fa-ul mb-0">
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>
+                        Responsive Web Design
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>
+                        Consumo de API REST
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>
+                        Creacion de API REST
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Awards-->
+        <section class="resume-section" id="awards">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Proyectos</h2>
+                <div class="container-fluid">
+                    <div class="row">
+                        <!--Card-->
+                        <div class="col-lg-4 col-md-6 col-sm-12 d-flex p-3">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Card-->
+                        <div class="col-lg-4 col-md-6 col-sm-12 d-flex p-3">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Card-->
+                        <div class="col-lg-4 col-md-6 col-sm-12 d-flex p-3">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Card-->
+                        <div class="col-lg-4 col-md-6 col-sm-12 d-flex p-3">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Card-->
+                        <div class="col-lg-4 col-md-6 col-sm-12 d-flex p-3">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+    <script type="text/javascript">
+        var qrcodeDWCompleto = new QRCode(document.getElementById("qrcodeDWCompleto"), {
+            text: "https://www.udemy.com/course/desarrollo-web-completo-con-html5-css3-js-php-y-mysql/",
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        var qrcodeBootstrap = new QRCode(document.getElementById("qrcodeBootstrap"), {
+            text: "https://www.udemy.com/course/aprende-bootstrap-4-el-framework-responsive-html5-css3-y-js/",
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        var qrcodeJavascript = new QRCode(document.getElementById("qrcodeJavascript"), {
+            text: "https://www.udemy.com/course/javascript-moderno-guia-definitiva-construye-10-proyectos/",
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        var qrcodeReact = new QRCode(document.getElementById("qrcodeReact"), {
+            text: "https://www.udemy.com/course/react-de-principiante-a-experto-creando-mas-de-10-aplicaciones/",
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        var qrcodenode = new QRCode(document.getElementById("qrcodeNode"), {
+            text: "https://www.udemy.com/course/node-de-cero-a-experto/",
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

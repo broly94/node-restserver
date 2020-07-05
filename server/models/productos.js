@@ -10,7 +10,8 @@ var productoSchema = new Schema({
   },
   descripcion: { type: String, required: false },
   estado: { type: Boolean, required: true, default: true },
-  categoria: { type: Schema.Types.ObjectId, ref: "Categorias", required: true }
+  categoria: { type: Schema.Types.ObjectId, ref: "Categorias", required: true },
+  img: {type: String, required: false}
 });
 
 productoSchema.plugin(uniqueValidator, {message: '{PATH} debe ser unico'})

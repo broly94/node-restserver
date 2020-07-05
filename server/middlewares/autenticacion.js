@@ -48,7 +48,33 @@ let verificaAdministrador = (req, res, next) => {
     }
 }
 
+//////////////////////////////////////////
+// VERIFICAR TOKEN IMAGEN
+//////////////////////////////////////////
+
+const verificaImagenToken = (req, res, next) => {
+
+    const token = req.query.token;
+
+    jwt.verify(token, process.env.SEED, (err, decoded) => {
+      if (err) {
+        return res.status(401).json({
+          ok: false,
+          err,
+          error: {
+            message: "Token no válido",
+          },
+        });
+      }
+
+      req.usuario = decoded.usuario;
+      next();
+
+    });
+}
+
 module.exports = {
     verificarToken,
-    verificaAdministrador
+    verificaAdministrador,
+    verificaImagenToken
 }
